@@ -1,0 +1,13 @@
+async function createPostAndUpdateActivityTime(post) {
+  try {
+    await createPost(post);
+    console.log(`Post created: ${post}`);
+    await updateLastActivityTime();
+    console.log(`Last activity time: ${lastActivityTime}`);
+    await deletePost();
+    console.log(`Post deleted. Remaining posts: ${posts}`);
+    const result = await getColdDrinks();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
